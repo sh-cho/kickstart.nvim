@@ -886,5 +886,21 @@ require('lazy').setup({
   },
 })
 
+-- tree-sitter
+local parser_config = require('nvim-treesitter.parsers').get_parser_configs()
+parser_config['fluentbit'] = {
+  install_info = {
+    url = 'https://github.com/sh-cho/tree-sitter-fluentbit',
+    files = { 'src/parser.c' },
+    branch = 'query',
+    require_generate_from_grammar = false,
+  },
+}
+vim.filetype.add {
+  filename = {
+    ['fluent-bit.conf'] = 'fluentbit',
+  },
+}
+
 -- The line beneath this is called `modeline`. See `:help modeline`
 -- vim: ts=2 sts=2 sw=2 et
