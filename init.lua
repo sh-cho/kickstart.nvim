@@ -892,7 +892,7 @@ parser_config['fluentbit'] = {
   install_info = {
     url = 'https://github.com/sh-cho/tree-sitter-fluentbit',
     files = { 'src/parser.c' },
-    branch = 'query',
+    branch = 'main',
     require_generate_from_grammar = false,
   },
 }
